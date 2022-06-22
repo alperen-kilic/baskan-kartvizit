@@ -1,0 +1,13 @@
+.content {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: fixed;
+    transition: all 350ms ease;
+    top: 170px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 600px;
+}
