@@ -1,7 +1,7 @@
-import { Box, ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
+import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
+import { Box } from "@mui/system";
 import React from "react";
 import useWindowDimensions from "../hooks/useWindowDimensions";
-import styles from "./IconList.module.css";
 
 const icons = [
   {
@@ -18,7 +18,7 @@ const icons = [
     img: "https://www.ticicard.com/tema/icons/0/Facebook.png",
   },
   {
-    title: "Instagram",
+    title: "Instagram 2",
     img: "https://www.ticicard.com/tema/icons/0/Instagram.png",
   },
   {
@@ -33,18 +33,21 @@ const icons = [
   { title: "Youtube", img: "https://www.ticicard.com/tema/icons/0/ytube.png" },
 ];
 
-function IconList() {
+function ContentArea() {
   const { height, width } = useWindowDimensions();
+  const contentWidth = width - 50 > 0 ? width - 50 : 0;
   const contentHeight = height - 230 > 0 ? height - 230 : 0;
+  var T2imgHeight = (height - 130) / 3 - 26;
+  var T2imgWidth = width / 3 - 20;
   return (
-    <Box className={styles.content} sx={{ height: contentHeight }}>
-      <Box sx={{maxHeight: contentHeight, position: 'relative', outline:'none'}}>
-        <ImageList cols={3} gap={5} sx={{ maxWidth: width }}>
+    <Box>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <ImageList variant="masonry" cols={3} gap={8}>
           {icons.map((item) => (
-            <ImageListItem key={item.img}>
+            <ImageListItem key={item.title}>
               <img
-                src={`${item.img}`}
-                srcSet={`${item.img}`}
+                src={`${item.img}?w=248&fit=crop&auto=format`}
+                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                 alt={item.title}
                 loading="lazy"
               />
@@ -61,4 +64,4 @@ function IconList() {
   );
 }
 
-export default IconList;
+export default ContentArea;

@@ -1,16 +1,14 @@
 import "./App.css";
 import { Container } from "@mui/material";
 import Header from "./components/Header";
-import IconList from "./components/IconList";
-import BottomButtons from "./components/BottomButtons";
+import ContentArea from "./components/ContentArea";
+import ContentCard from "./components/ContentCard";
 
 function App() {
   return (
-    <Container sx={{ backgroundColor: "black" }}>
-      <Header />
-      <IconList />
-      <BottomButtons />
-    </Container>
+    <div>
+      <ContentCard />
+    </div>
   );
 }
 

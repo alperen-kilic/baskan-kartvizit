@@ -1,20 +1,30 @@
-import { Box, Typography } from "@mui/material";
+import { Avatar, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import React from "react";
-import styles from "./Header.module.css";
-import headerLogo from "../assets/mehmet-murat-calik.jpg";
+import headerAvatar from "../assets/mehmet-murat-calik.jpg";
 
 function Header() {
   return (
     <Box
-      display={"flex"}
-      justifyContent="center"
-      sx={{ flexDirection: "column", textAlign: 'center', alignItems:'center'}}
+      sx={{
+        paddingTop:"10px",
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",
+        flexDirection:"column",
+        textAlign:"center",
+        wordBreak:"break-word"
+      }}
     >
-      <img src={headerLogo} className={styles.headerLogo} alt="Logo" />
-      <Typography color={"white"} variant="h4" fontWeight={"500"}>
+      <Avatar
+        alt="Mehmet Murat Çalık"
+        src={headerAvatar}
+        sx={{ width: { xs: 56, sm: 128 }, height: { xs: 56, sm: 128 } }}
+      />
+      <Typography variant="h6" color="white">
         Mehmet Murat ÇALIK
       </Typography>
-      <Typography color={"gray"} variant="body2">
+      <Typography variant="body2" color="gray">
         Beylikdüzü Belediye Başkanı
       </Typography>
     </Box>
