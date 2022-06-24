@@ -1,7 +1,13 @@
-import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
+import {
+  Grid,
+  ImageList,
+  ImageListItem,
+  ImageListItemBar,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import useWindowDimensions from "../hooks/useWindowDimensions";
+import SingleCard from "./SingleCard";
 
 const icons = [
   {
@@ -35,32 +41,46 @@ const icons = [
 
 function ContentArea() {
   const { height, width } = useWindowDimensions();
-  const contentWidth = width - 50 > 0 ? width - 50 : 0;
+  const contentWidth = width - 5 > 0 ? width - 5 : 0;
   const contentHeight = height - 230 > 0 ? height - 230 : 0;
-  var T2imgHeight = (height - 130) / 3 - 26;
-  var T2imgWidth = width / 3 - 20;
+  const imageHeight = contentHeight / 3 - 20;
   return (
-    <Box>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <ImageList variant="masonry" cols={3} gap={8}>
-          {icons.map((item) => (
-            <ImageListItem key={item.title}>
-              <img
-                src={`${item.img}?w=248&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-              />
-              <ImageListItemBar
-                title={item.title}
-                position="below"
-                sx={{ color: "gray", textAlign: "center" }}
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-      </Box>
-    </Box>
+    <div
+      style={{
+        display: "block",
+        height: `${contentHeight}px`,
+        backgroundColor: "transparent!important",
+        position: "fixed",
+        transition: "all 350ms ease",
+        boxSizing: "border-box",
+        top: "170px",
+        left: "0",
+        right: "0",
+        textAlign: "center",
+        width: "100%",
+        margin: "0 auto",
+        maxWidth: "600px",
+        wordWrap: "break-word",
+        width: `${contentWidth}px`,
+      }}
+    >
+      <ImageList cols={3} gap={8} sx={{height: `${contentHeight}px`}}>
+        {icons.map((item) => (
+          <ImageListItem key={item.img}>
+            <img
+              src={`${item.img}?w=248&fit=crop&auto=format`}
+              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              alt={item.title}
+              loading="lazy"
+            />
+            <ImageListItemBar
+              title={item.title}
+              position="below"
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
+    </div>
   );
 }
 
