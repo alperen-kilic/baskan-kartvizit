@@ -1,8 +1,9 @@
 import React from 'react'
 
-function SingleCard({title, imgUri}) {
+function SingleCard({title, imgUri, itemH, imgH, imgW}) {
   return (
-    <div></div>
+    <div>
+    </div>
   )
 }
 

@@ -1,8 +1,13 @@
 import "./App.css";
-import { Container, createTheme, ThemeProvider } from "@mui/material";
+import {
+  Container,
+  createTheme,
+  Stack,
+  ThemeProvider,
+  Typography,
+} from "@mui/material";
 import Header from "./components/Header";
 import ContentArea from "./components/ContentArea";
-import ContentCard from "./components/ContentCard";
 
 const theme = createTheme({
   breakpoints: {
@@ -18,11 +23,18 @@ const theme = createTheme({
 
 function App() {
   return (
-    <div>
-      <ThemeProvider theme={theme}>
-        <ContentCard />
-      </ThemeProvider>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Stack
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        spacing={1}
+      >
+        <Header />
+        <ContentArea />
+        <Typography>Item</Typography>
+      </Stack>
+    </ThemeProvider>  
   );
 }
 

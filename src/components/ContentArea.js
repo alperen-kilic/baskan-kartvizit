@@ -43,44 +43,24 @@ function ContentArea() {
   const { height, width } = useWindowDimensions();
   const contentWidth = width - 5 > 0 ? width - 5 : 0;
   const contentHeight = height - 230 > 0 ? height - 230 : 0;
-  const imageHeight = contentHeight / 3 - 20;
+  const itemHeight = contentHeight / 3;
+  const imageHeight = itemHeight - 26;
+  const imageWidth = contentWidth / 3 - 10;
   return (
-    <div
-      style={{
-        display: "block",
-        height: `${contentHeight}px`,
-        backgroundColor: "transparent!important",
-        position: "fixed",
-        transition: "all 350ms ease",
-        boxSizing: "border-box",
-        top: "170px",
-        left: "0",
-        right: "0",
-        textAlign: "center",
-        width: "100%",
-        margin: "0 auto",
-        maxWidth: "600px",
-        wordWrap: "break-word",
-        width: `${contentWidth}px`,
-      }}
-    >
-      <ImageList cols={3} gap={8} sx={{height: `${contentHeight}px`}}>
-        {icons.map((item) => (
-          <ImageListItem key={item.img}>
+    <Grid container>
+      {icons.map((item) => (
+        <Grid item xs={4}>
+          <ImageListItem>
             <img
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+              srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
               alt={item.title}
               loading="lazy"
             />
-            <ImageListItemBar
-              title={item.title}
-              position="below"
-            />
           </ImageListItem>
-        ))}
-      </ImageList>
-    </div>
+        </Grid>
+      ))}
+    </Grid>
   );
 }
 
