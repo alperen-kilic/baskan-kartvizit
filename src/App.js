@@ -24,7 +24,7 @@ const theme = createTheme({
 
 function App() {
   return (
-    <Container>
+    <Container sx={{padding:"0"}}>
       <Header/>
       <SlComponent />
       <BottomButtons />

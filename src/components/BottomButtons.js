@@ -1,4 +1,4 @@
-import { Box, Drawer, IconButton, Typography } from "@mui/material";
+import { Box, Drawer, IconButton, Paper, Stack, Typography } from "@mui/material";
 import React from "react";
 import ShareIcon from "@mui/icons-material/Share";
 import QrCodeIcon from '@mui/icons-material/QrCode';
@@ -7,7 +7,8 @@ function BottomButtons() {
   const [shareDrawer, setShareDrawer] = React.useState(false);
   const [qrCodeDrawer, setQrCodeDrawer] = React.useState(false);
   return (
-    <Box color={"white"} display="flex" sx={{justifyContent:"center"}}>
+    <Stack color={"white"} direction="row">
+      <Paper elevation={3}>
       <IconButton
         size="large"
         edge="start"
@@ -18,6 +19,7 @@ function BottomButtons() {
         <ShareIcon />
         <Typography variant="caption">Paylaş</Typography>
       </IconButton>
+      </Paper>
       <Drawer
         anchor="bottom"
         open={shareDrawer}
@@ -27,6 +29,7 @@ function BottomButtons() {
           <Typography>Share Drawer</Typography>
         </Box>
       </Drawer>
+      <Paper elevation={3}>
       <IconButton
         size="large"
         edge="start"
@@ -37,6 +40,7 @@ function BottomButtons() {
         <QrCodeIcon />
         <Typography variant="caption">QR Kod</Typography>
       </IconButton>
+      </Paper>
       <Drawer
         anchor="bottom"
         open={qrCodeDrawer}
@@ -46,7 +50,7 @@ function BottomButtons() {
           <Typography>QR Code Drawer</Typography>
         </Box>
       </Drawer>
-    </Box>
+    </Stack>
   );
 }
 
