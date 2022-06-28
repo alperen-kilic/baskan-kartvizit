@@ -6,9 +6,7 @@ import {
   ThemeProvider,
   Typography,
 } from "@mui/material";
-import Header from "./components/Header";
-import ContentArea from "./components/ContentArea";
-import BottomButtons from "./components/BottomButtons";
+import SlComponent from "./components/SlComponent";
 
 const theme = createTheme({
   breakpoints: {
@@ -24,18 +22,8 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Stack
-        direction="column"
-        justifyContent="center"
-        alignItems="center"
-        spacing={1}
-      >
-        <Header />
-        <ContentArea />
-        <BottomButtons />
-      </Stack>
-    </ThemeProvider>  
+    <div></div>
+      
   );
 }
 
