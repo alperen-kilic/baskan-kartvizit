@@ -42,25 +42,23 @@ const icons = [
 function ContentArea() {
   const { height, width } = useWindowDimensions();
   const contentWidth = width - 5 > 0 ? width - 5 : 0;
-  const contentHeight = height - 230 > 0 ? height - 230 : 0;
+  const contentHeight = height - 240 > 0 ? height - 240 : 0;
   const itemHeight = contentHeight / 3;
   const imageHeight = itemHeight - 26;
   const imageWidth = contentWidth / 3 - 10;
   return (
-    <Grid container>
+    <ImageList sx={{ width: `${contentWidth}px`, height:`${contentHeight}px` }} cols={3} rowHeight={itemHeight}>
       {icons.map((item) => (
-        <Grid item xs={4}>
-          <ImageListItem>
-            <img
-              src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-              srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-              alt={item.title}
-              loading="lazy"
-            />
-          </ImageListItem>
-        </Grid>
+        <ImageListItem key={item.img} sx={{width:"55px"}}>
+          <img
+            src={`${item.img}`}
+            srcSet={`${item.img}`}
+            alt={item.title}
+            loading="lazy"
+          />
+        </ImageListItem>
       ))}
-    </Grid>
+    </ImageList>
   );
 }
 

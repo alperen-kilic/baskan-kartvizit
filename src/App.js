@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import Header from "./components/Header";
 import ContentArea from "./components/ContentArea";
+import BottomButtons from "./components/BottomButtons";
 
 const theme = createTheme({
   breakpoints: {
@@ -32,7 +33,7 @@ function App() {
       >
         <Header />
         <ContentArea />
-        <Typography>Item</Typography>
+        <BottomButtons />
       </Stack>
     </ThemeProvider>  
   );
