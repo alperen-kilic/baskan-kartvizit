@@ -31,3 +31,8 @@ body {
   display: block;
   width: 100%;
 }
+
+.mySwiper {
+    color:gray;
+    text-align: center;
+}

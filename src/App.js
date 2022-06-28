@@ -7,6 +7,8 @@ import {
   Typography,
 } from "@mui/material";
 import SlComponent from "./components/SlComponent";
+import Header from "./components/Header";
+import BottomButtons from "./components/BottomButtons";
 
 const theme = createTheme({
   breakpoints: {
@@ -22,7 +24,11 @@ const theme = createTheme({
 
 function App() {
   return (
-    <div></div>
+    <Container>
+      <Header/>
+      <SlComponent />
+      <BottomButtons />
+    </Container>
       
   );
 }
