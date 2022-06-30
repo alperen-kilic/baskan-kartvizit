@@ -1,0 +1,67 @@
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: fit-content;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.swiper-slide-visible {
+    opacity: 1;
+}
+
+.swiper-slide span {
+  color: transparent;
+}
+
+.swiper-slide img {
+  display: block;
+}
+
+.mySwiper {
+  color: gray;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(252, 252, 252);
+  cursor: inherit;
+}
+
+.swiper-slide-active span {
+  color: rgb(252, 252, 252);
+}
+
+.swiper-slide-active {
+    cursor: pointer;
+}

@@ -1,30 +1,43 @@
-import { Avatar, Typography } from "@mui/material";
+import {
+  Avatar,
+  Divider,
+  Typography,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import headerAvatar from "../assets/mehmet-murat-calik.jpg";
+import headerAvatar2 from "../assets/mm-calik.jpg";
 
 function Header() {
   return (
     <Box
-      sx={{
-        paddingTop:"10px",
-        display:"flex",
-        justifyContent:"center",
-        alignItems:"center",
-        flexDirection:"column",
-        textAlign:"center",
-        wordBreak:"break-word"
-      }}
+      textAlign={"center"}
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
     >
       <Avatar
-        alt="Mehmet Murat Çalık"
-        src={headerAvatar}
-        sx={{ width: { xs: 56, sm: 128 }, height: { xs: 56, sm: 128 } }}
+        src={headerAvatar2}
+        sx={{
+          width: { xxs: 110, lg: 160 },
+          height: { xxs: 110, lg: 160 },
+          marginTop: "15px",
+          marginBottom: "10px",
+        }}
       />
-      <Typography variant="h6" color="white">
-        Mehmet Murat ÇALIK
+      <Typography variant="h4" color="white" gutterBottom sx={{typography: { xxs: "h4", md: "h3"}}}>
+        Mehmet Murat{" "}
+        <span>
+          <b>ÇALIK</b>
+        </span>
       </Typography>
-      <Typography variant="body2" color="gray">
+      <Divider
+        light="true"
+        sx={{ background: "gray", width: "60%", marginBottom: "0.25rem" }}
+        variant="middle"
+      />
+      <Typography variant="body2" color="#c9c9c9" sx={{typography: { xxs: "body2", md: "h6"}, fontWeight: {md: 300}}}>
         Beylikdüzü Belediye Başkanı
       </Typography>
     </Box>
