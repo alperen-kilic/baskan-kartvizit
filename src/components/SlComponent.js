@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,7 +14,7 @@ import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 import { Typography } from "@mui/material";
 
 import useWindowDimensions from "../hooks/useWindowDimensions";
-import { Box, display } from "@mui/system";
+import { Box } from "@mui/system";
 
 export default function SlComponent() {
   const { height, width } = useWindowDimensions();
@@ -23,40 +23,47 @@ export default function SlComponent() {
   const itemHeight = contentHeight / 3;
   const imageHeight = itemHeight - 26;
   const imageWidth = contentWidth / 3 - 10;
-  const maxSize = Math.max(imageHeight, imageWidth);
 
   const icons = [
     {
       title: "Rehber",
       img: "https://www.ticicard.com/tema/icons/0/Rehberekle.png",
+      url: "https://www.google.com"
     },
     {
       title: "Arama",
       img: "https://www.ticicard.com/tema/icons/0/Arama.png",
+      url: "https://www.google.com"
     },
     {
       title: "Instagram",
       img: "https://www.ticicard.com/tema/icons/0/Instagram.png",
+      url: "https://www.instagram.com"
     },
     {
       title: "Facebook",
       img: "https://www.ticicard.com/tema/icons/0/Facebook.png",
+      url: "https://www.facebook.com"
     },
     {
       title: "Whatsapp",
       img: "https://www.ticicard.com/tema/icons/0/whatsapp.png",
+      url: "https://www.whatsapp.com"
     },
     {
       title: "Twitter",
       img: "https://www.ticicard.com/tema/icons/0/Twitter.png",
+      url: "https://www.twitter.com"
     },
     {
       title: "Web",
       img: "https://www.ticicard.com/tema/icons/0/Website.png",
+      url: "https://www.beylikduzu.istanbul"
     },
     {
       title: "Youtube",
       img: "https://www.ticicard.com/tema/icons/0/ytube.png",
+      url: "https://www.youtube.com"
     },
   ];
 
@@ -65,7 +72,7 @@ export default function SlComponent() {
   return (
     <Box
       sx={{
-        height: `${contentHeight}px`,
+        height: "50vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -80,17 +87,17 @@ export default function SlComponent() {
           delay: 2500,
           disableOnInteraction: false,
         }}
+        watchSlidesProgress={true}
         breakpoints={{
           200: {
             slidesPerView: 2,
           },
           360: {
-            slidesPerView: 3,
+            slidesPerView: 4,
             spaceBetween: 20,
           },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 25,  
+          720: {
+            slidesPerView: 6,
           },
         }}
         coverflowEffect={{
@@ -106,13 +113,15 @@ export default function SlComponent() {
       >
         {icons.map((item) => (
           <SwiperSlide>
-            <img
-              src={item.img}
-              alt={item.title}
-              key={item.title}
-              style={{ width: "170px", height: "170px" }}
-            />
-            <Typography variant="overline">{item.title}</Typography>
+            <a href={item.url} target="_blank">
+              <img
+                src={item.img}
+                alt={item.title}
+                key={item.title}
+                style={{ width: "170px", height: "170px" }}
+              />
+              <Typography variant="overline">{item.title}</Typography>
+            </a>
           </SwiperSlide>
         ))}
       </Swiper>

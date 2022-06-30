@@ -32,10 +32,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+}
+
+.swiper-slide-visible {
+    opacity: 1;
 }
 
 .swiper-slide span {
-    color: transparent;
+  color: transparent;
 }
 
 .swiper-slide img {
@@ -48,10 +53,15 @@ body {
 }
 
 a {
-    text-decoration: none;
-    color: gray;
+  text-decoration: none;
+  color: rgb(252, 252, 252);
+  cursor: inherit;
 }
 
 .swiper-slide-active span {
-    color: gray;
+  color: rgb(252, 252, 252);
+}
+
+.swiper-slide-active {
+    cursor: pointer;
 }
