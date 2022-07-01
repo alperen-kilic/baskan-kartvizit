@@ -21,7 +21,7 @@ export default function SlComponent() {
     {
       title: "Rehber",
       img: "https://www.ticicard.com/tema/icons/0/Rehberekle.png",
-      url: "https://store2.gofile.io/download/301a4ba1-8c69-44f0-b40c-31dd9797e797/mehmet-murat-calik.vcf"
+      downUrl: "https://ia801509.us.archive.org/21/items/mehmet-murat-calik/mehmet-murat-calik.vcf"
     },
     {
       title: "Arama",
@@ -104,7 +104,7 @@ export default function SlComponent() {
       >
         {icons.map((item) => (
           <SwiperSlide key={item.url || item.action}>
-            <a className="noSelect" href={item.url ? item.url : "#"} target={item.url ? "_blank" : undefined} onClick={item.action ? () => {window.location.href = item.action} : undefined}>
+            <a className="noSelect" href={item.url || item.downUrl ? item.url || item.downUrl : "#"} target={item.url ? "_blank" : undefined} onClick={item.action ? () => {window.location.href = item.action} : undefined}>
               <img
                 src={item.img}
                 alt={item.title}
