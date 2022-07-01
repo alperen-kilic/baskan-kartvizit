@@ -21,7 +21,7 @@ export default function SlComponent() {
     {
       title: "Rehber",
       img: "https://www.ticicard.com/tema/icons/0/Rehberekle.png",
-      url: "https://www.dropbox.com/s/8jqx6oipa21sjsp/mehmet-murat-calik.vcf?dl=1"
+      url: "https://store2.gofile.io/download/301a4ba1-8c69-44f0-b40c-31dd9797e797/mehmet-murat-calik.vcf"
     },
     {
       title: "Arama",
