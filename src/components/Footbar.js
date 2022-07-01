@@ -21,6 +21,12 @@ function Footbar() {
   const [qrCodeDrawer, setQrCodeDrawer] = React.useState(false);
   const [snackOpen, setSnackOpen] = React.useState(false);
 
+  const shareData = {
+    title: "Dijital Kartvizit",
+    text: "Mehmet Murat Çalık",
+    url: window.location.href
+  }
+
   const handleSnackClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -37,6 +43,14 @@ function Footbar() {
         alert("Bir şeyler ters gitti!");
     });
   };
+
+  const directShareHandler = async() => {
+    try {
+      await navigator.share(shareData)
+    } catch(err) {
+      alert("Paylaşırken bir hata oluştu!")
+    }
+  }
 
   const action = (
     <React.Fragment>
@@ -122,6 +136,14 @@ function Footbar() {
                   sx={{ marginTop: "1rem", width: "90%" }}
                 >
                   Kopyala
+                </Button>
+                <Button
+                  onClick={directShareHandler}
+                  variant="contained"
+                  color="neutral"
+                  sx={{ marginTop: "1rem", width: "90%" }}
+                >
+                  Paylaş
                 </Button>
               </div>
             </Box>
