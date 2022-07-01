@@ -33,7 +33,6 @@ function Header() {
         </span>
       </Typography>
       <Divider
-        light="true"
         sx={{ background: "gray", width: "60%", marginBottom: "0.25rem" }}
         variant="middle"
       />

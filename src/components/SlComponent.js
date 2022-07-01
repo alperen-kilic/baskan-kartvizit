@@ -13,47 +13,40 @@ import "./styles.css";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 import { Typography } from "@mui/material";
 
-import useWindowDimensions from "../hooks/useWindowDimensions";
 import { Box } from "@mui/system";
 
 export default function SlComponent() {
-  const { height, width } = useWindowDimensions();
-  const contentWidth = width - 5 > 0 ? width - 5 : 0;
-  const contentHeight = height - 240 > 0 ? height - 240 : 0;
-  const itemHeight = contentHeight / 3;
-  const imageHeight = itemHeight - 26;
-  const imageWidth = contentWidth / 3 - 10;
 
   const icons = [
     {
       title: "Rehber",
       img: "https://www.ticicard.com/tema/icons/0/Rehberekle.png",
-      url: "https://www.google.com"
+      url: "https://data.atonline.net/~jwt/eyJhY3QiOiJnZXQiLCJtaW1lIjoidGV4dC94LXZjYXJkIiwicCI6ImJsb2JzcmMvYmxvYnMtNHBmcjVxLXBieHItaGVsYy1obXFtLXR0dnN4cmJxIn0/mehmet-murat-calik.vcf?v=1&u=phplatform&e=1656656867&s=HTBsrDoq1CU_-FqwLCDerYC_dWtgUQu76XHnKNtN-hM"
     },
     {
       title: "Arama",
       img: "https://www.ticicard.com/tema/icons/0/Arama.png",
-      url: "https://www.google.com"
+      action: "tel:4440939"
     },
     {
       title: "Instagram",
       img: "https://www.ticicard.com/tema/icons/0/Instagram.png",
-      url: "https://www.instagram.com"
+      url: "https://www.instagram.com/mmuratcalik/"
     },
     {
       title: "Facebook",
       img: "https://www.ticicard.com/tema/icons/0/Facebook.png",
-      url: "https://www.facebook.com"
+      url: "https://www.facebook.com/mmuratcalik/"
     },
     {
       title: "Whatsapp",
       img: "https://www.ticicard.com/tema/icons/0/whatsapp.png",
-      url: "https://www.whatsapp.com"
+      action: "https://api.whatsapp.com/send?phone=4440939"
     },
     {
       title: "Twitter",
       img: "https://www.ticicard.com/tema/icons/0/Twitter.png",
-      url: "https://www.twitter.com"
+      url: "https://twitter.com/mmuratcalik"
     },
     {
       title: "Web",
@@ -63,12 +56,10 @@ export default function SlComponent() {
     {
       title: "Youtube",
       img: "https://www.ticicard.com/tema/icons/0/ytube.png",
-      url: "https://www.youtube.com"
+      url: "https://www.youtube.com/c/mmuratcalik"
     },
   ];
 
-  console.log(imageHeight);
-  console.log(imageWidth);
   return (
     <Box
       sx={{
@@ -112,12 +103,11 @@ export default function SlComponent() {
         className="mySwiper"
       >
         {icons.map((item) => (
-          <SwiperSlide>
-            <a href={item.url} target="_blank">
+          <SwiperSlide key={item.url || item.action}>
+            <a href={item.url ? item.url : "#"} target={item.url ? "_blank" : undefined} onClick={item.action ? () => {window.location.href = item.action} : undefined}>
               <img
                 src={item.img}
                 alt={item.title}
-                key={item.title}
                 style={{ width: "170px", height: "170px" }}
               />
               <Typography variant="overline">{item.title}</Typography>

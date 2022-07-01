@@ -13,7 +13,6 @@ import {
 } from "@mui/material";
 import React from "react";
 import beylikduzuLogo from "../assets/beylikduzu_logo.png";
-import beylikduzuLogo2 from "../assets/bb-logotype.png"
 import { QrCode, Share, Close } from "@mui/icons-material";
 import { QRCode } from "react-qrcode-logo";
 
@@ -31,9 +30,12 @@ function Footbar() {
   };
 
   const shareHandler = () => {
-    navigator.clipboard.writeText(window.location.href);
-    setShareDrawer(false);
-    setSnackOpen(true);
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setShareDrawer(false);
+      setSnackOpen(true);
+    }).catch(() => {
+        alert("Bir şeyler ters gitti!");
+    });
   };
 
   const action = (
@@ -52,7 +54,7 @@ function Footbar() {
   return (
     <div>
       <Snackbar
-        anchorOrigin={{vertical:'top', horizontal:'left'}}
+        anchorOrigin={{ vertical: "top", horizontal: "left" }}
         open={snackOpen}
         autoHideDuration={2000}
         onClose={handleSnackClose}
@@ -161,8 +163,8 @@ function Footbar() {
                   value={window.location.href}
                   logoImage={beylikduzuLogo}
                   fgColor="#0BA793"
-                  logoHeight={250*0.3}
-                  logoWidth={250*0.3}
+                  logoHeight={250 * 0.3}
+                  logoWidth={250 * 0.3}
                   removeQrCodeBehindLogo="true"
                   eyeRadius={5}
                   size={250}
