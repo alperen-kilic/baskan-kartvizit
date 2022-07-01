@@ -23,7 +23,6 @@ function Footbar() {
 
   const shareData = {
     title: "Dijital Kartvizit",
-    text: "Mehmet Murat Çalık",
     url: window.location.href
   }
 
@@ -48,7 +47,6 @@ function Footbar() {
     try {
       await navigator.share(shareData)
     } catch(err) {
-      alert("Paylaşırken bir hata oluştu!")
     }
   }
 
