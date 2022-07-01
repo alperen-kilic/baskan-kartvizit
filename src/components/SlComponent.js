@@ -21,7 +21,7 @@ export default function SlComponent() {
     {
       title: "Rehber",
       img: "https://www.ticicard.com/tema/icons/0/Rehberekle.png",
-      url: "https://www.dropbox.com/s/is8h19p7lg5q98y/mehmet-murat-calik.vcf?dl=1"
+      url: "https://www.dropbox.com/s/sajwonyzvmzmssf/vcard-mehmetmuratcalik.vcf?dl=1"
     },
     {
       title: "Arama",
@@ -51,7 +51,7 @@ export default function SlComponent() {
     {
       title: "Web",
       img: "https://www.ticicard.com/tema/icons/0/Website.png",
-      url: "https://www.beylikduzu.istanbul"
+      url: "https://www.mehmetmuratcalik.com/"
     },
     {
       title: "Youtube",
