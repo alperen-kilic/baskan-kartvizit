@@ -124,17 +124,16 @@ function Footbar() {
               <Divider />
               <div style={{ marginTop: "2rem" }}>
                 <Typography variant="body1" gutterBottom>
-                  Aşağıdaki buton yardımı ile kartvizitinizin linkini
-                  kopyalayarak paylaşabilirsiniz.
+                  Aşağıdaki buton yardımı ile kartvizitinizi istediğiniz platformda paylaşabilirsiniz.
                 </Typography>
-                <Button
+                {/* <Button
                   onClick={shareHandler}
                   variant="contained"
                   color="neutral"
                   sx={{ marginTop: "1rem", width: "90%" }}
                 >
                   Kopyala
-                </Button>
+                </Button> */}
                 <Button
                   onClick={directShareHandler}
                   variant="contained"
