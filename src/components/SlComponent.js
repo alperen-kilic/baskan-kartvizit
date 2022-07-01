@@ -100,15 +100,16 @@ export default function SlComponent() {
         }}
         pagination={false}
         modules={[EffectCoverflow, Pagination, Autoplay]}
-        className="mySwiper"
+        className="mySwiper noSelect"
       >
         {icons.map((item) => (
           <SwiperSlide key={item.url || item.action}>
-            <a href={item.url ? item.url : "#"} target={item.url ? "_blank" : undefined} onClick={item.action ? () => {window.location.href = item.action} : undefined}>
+            <a className="noSelect" href={item.url ? item.url : "#"} target={item.url ? "_blank" : undefined} onClick={item.action ? () => {window.location.href = item.action} : undefined}>
               <img
                 src={item.img}
                 alt={item.title}
                 style={{ width: "170px", height: "170px" }}
+                className="noSelect"
               />
               <Typography variant="overline">{item.title}</Typography>
             </a>
